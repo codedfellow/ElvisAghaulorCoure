@@ -18,7 +18,9 @@ namespace NumberTwoWebAPI.Controllers
         [Route("get-country-details-with-phone-number")]
         public async Task<IActionResult> GetCountryDetailsWithPhoneNumber([FromQuery]string phoneNumber)
         {
-            return Ok("yet to be implemented");
+            var response = await _countryService.GetNumberInformation(phoneNumber);
+
+            return Ok(response);
         }
     }
 }
